@@ -2720,7 +2720,7 @@ const texto = document.getElementById("feedback");
 document.getElementById("btnChutar").addEventListener("click", () => {
     const chute = Number(campo.value);
     if (chute === segredo) {
-        texto.innerText = "🎉 Parabéns! Você acertou!";
+        texto.innerText = "Parabéns! Você acertou!";
         texto.style.color = "green";
     } else {
         texto.innerText = chute > segredo ? "Muito alto!" : "Muito baixo!";
@@ -2759,7 +2759,7 @@ btn.addEventListener("mouseover", () => {
     btn.style.top = `${y}px`;
 });
 
-btn.addEventListener("click", () => alert("🎯 Você me pegou!"));
+btn.addEventListener("click", () => alert("Você me pegou!"));
 </script>
 \end{verbatim}
 \end{boxCodigo}
@@ -2770,13 +2770,13 @@ btn.addEventListener("click", () => alert("🎯 Você me pegou!"));
 
 \begin{boxCodigo}
 \begin{verbatim}
-<button onclick="jogar('🪨')">🪨</button>
-<button onclick="jogar('📄')">📄</button>
-<button onclick="jogar('✂️')">✂️</button>
+<button onclick="jogar('PEDRA')">PEDRA</button>
+<button onclick="jogar('PAPEL')">PAPEL</button>
+<button onclick="jogar('TESOURA')">TESOURA</button>
 <h3 id="resultadoJogo">Escolha um!</h3>
 
 <script>
-const opcoes = ['🪨', '📄', '✂️'];
+const opcoes = ['PEDRA', 'PAPEL', 'TESOURA'];
 
 function jogar(player) {
     const pc = opcoes[Math.floor(Math.random() * 3)];
@@ -2785,9 +2785,9 @@ function jogar(player) {
     if (player === pc) {
         res.innerText = `Empate! Ambos escolheram ${pc}`;
     } else if (
-        (player === '🪨' && pc === '✂️') ||
-        (player === '📄' && pc === '🪨') ||
-        (player === '✂️' && pc === '📄')
+        (player === 'PEDRA' && pc === 'TESOURA') ||
+        (player === 'PAPEL' && pc === 'PEDRA') ||
+        (player === 'TESOURA' && pc === 'PAPEL')
     ) {
         res.innerText = `Você Ganhou! ${player} vence ${pc}`;
     } else {
