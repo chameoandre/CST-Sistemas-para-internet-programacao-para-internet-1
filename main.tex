@@ -2830,12 +2830,14 @@ O encadeamento de \texttt{.then() => ...} é o movimento da esteira passando o p
 
 \subsection{Exploração Prática — O Projeto ViaCEP}
 
+No mundo real, as páginas não são estáticas. Elas precisam buscar informações em outros servidores (APIs). Nesta etapa, vamos transformar seu formulário em uma ferramenta de consulta em tempo real.
+
 \begin{boxAtividade}[A Intenção do Código]
-O fluxo aqui é completo: o usuário digita um CEP **=>** Nós perguntamos aos correios via internet **=>** Eles nos devolvem um pacote (JSON) **=>** Nós abrimos esse pacote e usamos o DOM para mostrar o endereço na tela sem recarregar a página.
+Nesta atividade, vamos conectar as pontas: o usuário digita um CEP no seu \texttt{index.html} $\Rightarrow$ O JavaScript faz uma requisição para o servidor do ViaCEP $\Rightarrow$ O servidor nos responde um pacote de dados (JSON) $\Rightarrow$ Nós "abrimos" esse pacote e usamos o DOM para preencher o endereço na tela automaticamente.
 \end{boxAtividade}
 
 \begin{boxAtividade}[Atividade prática 3 — Integração Completa (Fetch + DOM)]
-Integre a busca de CEP no seu projeto:
+Dentro da sua pasta \texttt{roteiro-8/}, abra o arquivo \texttt{index.html} e implemente a lógica de busca:
 
 \begin{boxCodigo}
 \begin{verbatim}
@@ -2866,6 +2868,20 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
 \texttt{response.json()} & Converte o pacote de texto recebido em objeto JS. \\ \hline
 \end{tabular}
 \end{center}
+\end{boxAtividade}
+
+\subsection{Parte Final — Mantendo a Organização}
+
+\begin{boxAtividade}[Atividade prática 4 — Sincronizando seu Trabalho]
+Um bom desenvolvedor mantém seu histórico organizado. Após testar o funcionamento do ViaCEP, execute os comandos abaixo no seu terminal para enviar as alterações ao GitHub:
+
+\begin{boxCodigo}
+\begin{verbatim}
+git add .
+git commit -m "Roteiro 08: Implementando busca de CEP com Fetch API"
+git push origin main
+\end{verbatim}
+\end{boxCodigo}
 \end{boxAtividade}
 
 \end{document}
